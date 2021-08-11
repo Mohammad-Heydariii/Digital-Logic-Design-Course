@@ -1,0 +1,662 @@
+Analysis & Synthesis report for pptanh
+Sun Jun 28 15:40:17 2020
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |tanh|tanh_Controller:Cu|ps
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for Inferred Entity Instance: tanh_Dp:Dp|lpm_mult:Mult0
+ 13. Parameter Settings for Inferred Entity Instance: tanh_Dp:Dp|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1
+ 14. Parameter Settings for Inferred Entity Instance: tanh_Dp:Dp|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2
+ 15. lpm_mult Parameter Settings by Entity Instance
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Jun 28 15:40:17 2020           ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
+; Revision Name                      ; pptanh                                          ;
+; Top-level Entity Name              ; tanh                                            ;
+; Family                             ; Cyclone IV GX                                   ;
+; Total logic elements               ; 473                                             ;
+;     Total combinational functions  ; 471                                             ;
+;     Dedicated logic registers      ; 55                                              ;
+; Total registers                    ; 55                                              ;
+; Total pins                         ; 36                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total GXB Receiver Channel PCS     ; 0                                               ;
+; Total GXB Receiver Channel PMA     ; 0                                               ;
+; Total GXB Transmitter Channel PCS  ; 0                                               ;
+; Total GXB Transmitter Channel PMA  ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                            ; tanh               ; pptanh             ;
+; Family name                                                      ; Cyclone IV GX      ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                            ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
+; pptanh.v                         ; yes             ; User Verilog HDL File        ; C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/pptanh.v             ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_mult.tdf          ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                 ; c:/intelfpga/18.1/quartus/libraries/megafunctions/aglobal181.inc        ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_add_sub.inc       ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; c:/intelfpga/18.1/quartus/libraries/megafunctions/multcore.inc          ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/intelfpga/18.1/quartus/libraries/megafunctions/bypassff.inc          ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/intelfpga/18.1/quartus/libraries/megafunctions/altshift.inc          ;         ;
+; db/mult_1ht.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/db/mult_1ht.tdf      ;         ;
+; alt_mac_mult.tdf                 ; yes             ; Megafunction                 ; c:/intelfpga/18.1/quartus/libraries/megafunctions/alt_mac_mult.tdf      ;         ;
+; lpm_mult.inc                     ; yes             ; Megafunction                 ; c:/intelfpga/18.1/quartus/libraries/megafunctions/lpm_mult.inc          ;         ;
+; db/mac_mult_r2h1.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/db/mac_mult_r2h1.tdf ;         ;
+; db/mult_jul.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/db/mult_jul.tdf      ;         ;
+; alt_mac_out.tdf                  ; yes             ; Megafunction                 ; c:/intelfpga/18.1/quartus/libraries/megafunctions/alt_mac_out.tdf       ;         ;
+; alt_zaccum.inc                   ; yes             ; Megafunction                 ; c:/intelfpga/18.1/quartus/libraries/megafunctions/alt_zaccum.inc        ;         ;
+; db/mac_out_kv82.tdf              ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/db/mac_out_kv82.tdf  ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++--------------------------+---------------------------+
+; Resource                 ; Usage                     ;
++--------------------------+---------------------------+
+; I/O pins                 ; 36                        ;
+;                          ;                           ;
+; DSP block 9-bit elements ; 0                         ;
+;                          ;                           ;
+; Maximum fan-out node     ; tanh_Controller:Cu|ps.010 ;
+; Maximum fan-out          ; 105                       ;
+; Total fan-out            ; 1863                      ;
+; Average fan-out          ; 3.12                      ;
++--------------------------+---------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                ;
++-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                        ; Entity Name     ; Library Name ;
++-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+; |tanh                                         ; 471 (0)             ; 55 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0         ; 36   ; 0            ; |tanh                                                                                                                      ; tanh            ; work         ;
+;    |tanh_Controller:Cu|                       ; 6 (6)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |tanh|tanh_Controller:Cu                                                                                                   ; tanh_Controller ; work         ;
+;    |tanh_Dp:Dp|                               ; 465 (129)           ; 49 (49)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |tanh|tanh_Dp:Dp                                                                                                           ; tanh_Dp         ; work         ;
+;       |lpm_mult:Mult0|                        ; 336 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |tanh|tanh_Dp:Dp|lpm_mult:Mult0                                                                                            ; lpm_mult        ; work         ;
+;          |mult_1ht:auto_generated|            ; 336 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |tanh|tanh_Dp:Dp|lpm_mult:Mult0|mult_1ht:auto_generated                                                                    ; mult_1ht        ; work         ;
+;             |alt_mac_mult:mac_mult1|          ; 336 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |tanh|tanh_Dp:Dp|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1                                             ; alt_mac_mult    ; work         ;
+;                |mac_mult_r2h1:auto_generated| ; 336 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |tanh|tanh_Dp:Dp|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated                ; mac_mult_r2h1   ; work         ;
+;                   |mult_jul:mult1|            ; 336 (336)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |tanh|tanh_Dp:Dp|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1 ; mult_jul        ; work         ;
++-----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------+
+; State Machine - |tanh|tanh_Controller:Cu|ps                  ;
++--------+--------+--------+--------+--------+--------+--------+
+; Name   ; ps.101 ; ps.100 ; ps.011 ; ps.010 ; ps.001 ; ps.000 ;
++--------+--------+--------+--------+--------+--------+--------+
+; ps.000 ; 0      ; 0      ; 0      ; 0      ; 0      ; 0      ;
+; ps.001 ; 0      ; 0      ; 0      ; 0      ; 1      ; 1      ;
+; ps.010 ; 0      ; 0      ; 0      ; 1      ; 0      ; 1      ;
+; ps.011 ; 0      ; 0      ; 1      ; 0      ; 0      ; 1      ;
+; ps.100 ; 0      ; 1      ; 0      ; 0      ; 0      ; 1      ;
+; ps.101 ; 1      ; 0      ; 0      ; 0      ; 0      ; 1      ;
++--------+--------+--------+--------+--------+--------+--------+
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; tanh_Controller:Cu|ps~4               ; Lost fanout        ;
+; tanh_Controller:Cu|ps~5               ; Lost fanout        ;
+; tanh_Controller:Cu|ps~6               ; Lost fanout        ;
+; tanh_Dp:Dp|expr[14,15]                ; Lost fanout        ;
+; Total Number of Removed Registers = 5 ;                    ;
++---------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 55    ;
+; Number of registers using Synchronous Clear  ; 2     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 55    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 49    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |tanh|tanh_Dp:Dp|expr[5]    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |tanh|tanh_Dp:Dp|addrRom[2] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |tanh|tanh_Dp:Dp|term[10]   ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |tanh|tanh_Dp:Dp|MAin[15]   ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |tanh|tanh_Dp:Dp|MBin[15]   ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |tanh|tanh_Dp:Dp|MAin[0]    ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |tanh|tanh_Dp:Dp|MAin[2]    ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |tanh|tanh_Dp:Dp|MAin[1]    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: tanh_Dp:Dp|lpm_mult:Mult0           ;
++------------------------------------------------+---------------+---------------------+
+; Parameter Name                                 ; Value         ; Type                ;
++------------------------------------------------+---------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON            ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF           ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON            ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF           ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 16            ; Untyped             ;
+; LPM_WIDTHB                                     ; 16            ; Untyped             ;
+; LPM_WIDTHP                                     ; 32            ; Untyped             ;
+; LPM_WIDTHR                                     ; 32            ; Untyped             ;
+; LPM_WIDTHS                                     ; 1             ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED      ; Untyped             ;
+; LPM_PIPELINE                                   ; 0             ; Untyped             ;
+; LATENCY                                        ; 0             ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO            ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO            ; Untyped             ;
+; USE_EAB                                        ; OFF           ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 6             ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV GX ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL        ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT           ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO          ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0             ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0             ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_1ht      ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx            ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx            ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF           ; Untyped             ;
++------------------------------------------------+---------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: tanh_Dp:Dp|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1 ;
++------------------------------+---------------+----------------------------------------------------------------------------+
+; Parameter Name               ; Value         ; Type                                                                       ;
++------------------------------+---------------+----------------------------------------------------------------------------+
+; LPM_WIDTHS                   ; 1             ; Untyped                                                                    ;
+; DATAA_WIDTH                  ; 16            ; Untyped                                                                    ;
+; DATAB_WIDTH                  ; 16            ; Untyped                                                                    ;
+; DATAA_CLOCK                  ; NONE          ; Untyped                                                                    ;
+; DATAB_CLOCK                  ; NONE          ; Untyped                                                                    ;
+; SIGNA_CLOCK                  ; NONE          ; Untyped                                                                    ;
+; SIGNB_CLOCK                  ; NONE          ; Untyped                                                                    ;
+; OUTPUT_CLOCK                 ; NONE          ; Untyped                                                                    ;
+; DATAA_CLEAR                  ; NONE          ; Untyped                                                                    ;
+; DATAB_CLEAR                  ; NONE          ; Untyped                                                                    ;
+; SIGNA_CLEAR                  ; NONE          ; Untyped                                                                    ;
+; SIGNB_CLEAR                  ; NONE          ; Untyped                                                                    ;
+; OUTPUT_CLEAR                 ; NONE          ; Untyped                                                                    ;
+; ROUND_CLOCK                  ; none          ; Untyped                                                                    ;
+; ROUND_CLEAR                  ; none          ; Untyped                                                                    ;
+; SATURATE_CLOCK               ; none          ; Untyped                                                                    ;
+; SATURATE_CLEAR               ; none          ; Untyped                                                                    ;
+; BYPASS_MULTIPLIER            ; NO            ; Untyped                                                                    ;
+; DYNAMIC_SCAN_CHAIN_SUPPORTED ; NO            ; Untyped                                                                    ;
+; USING_ROUNDING               ; NO            ; Untyped                                                                    ;
+; USING_SATURATION             ; NO            ; Untyped                                                                    ;
+; EXTRA_OUTPUT_CLOCK           ; none          ; Untyped                                                                    ;
+; EXTRA_SIGNA_CLOCK            ; none          ; Untyped                                                                    ;
+; EXTRA_SIGNB_CLOCK            ; none          ; Untyped                                                                    ;
+; EXTRA_OUTPUT_CLEAR           ; none          ; Untyped                                                                    ;
+; EXTRA_SIGNA_CLEAR            ; none          ; Untyped                                                                    ;
+; EXTRA_SIGNB_CLEAR            ; none          ; Untyped                                                                    ;
+; MULT_PIPELINE                ; 0             ; Untyped                                                                    ;
+; MULT_CLOCK                   ; NONE          ; Untyped                                                                    ;
+; MULT_CLEAR                   ; NONE          ; Untyped                                                                    ;
+; MULT_REPRESENTATION_A        ; UNSIGNED      ; Untyped                                                                    ;
+; MULT_REPRESENTATION_B        ; UNSIGNED      ; Untyped                                                                    ;
+; MULT_INPUT_A_IS_CONSTANT     ; NO            ; Untyped                                                                    ;
+; MULT_INPUT_B_IS_CONSTANT     ; NO            ; Untyped                                                                    ;
+; MULT_INPUT_A_FIXED_VALUE     ; Bx            ; Untyped                                                                    ;
+; MULT_INPUT_B_FIXED_VALUE     ; Bx            ; Untyped                                                                    ;
+; MULT_MAXIMIZE_SPEED          ; 5             ; Untyped                                                                    ;
+; CBXI_PARAMETER               ; mac_mult_r2h1 ; Untyped                                                                    ;
++------------------------------+---------------+----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: tanh_Dp:Dp|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2 ;
++-------------------------------+--------------+--------------------------------------------------------------------------+
+; Parameter Name                ; Value        ; Type                                                                     ;
++-------------------------------+--------------+--------------------------------------------------------------------------+
+; OPERATION_MODE                ; OUTPUT_ONLY  ; Untyped                                                                  ;
+; DATAA_WIDTH                   ; 32           ; Untyped                                                                  ;
+; DATAB_WIDTH                   ; 0            ; Untyped                                                                  ;
+; DATAC_WIDTH                   ; 0            ; Untyped                                                                  ;
+; DATAD_WIDTH                   ; 0            ; Untyped                                                                  ;
+; ADDNSUB0_CLOCK                ; NONE         ; Untyped                                                                  ;
+; ADDNSUB1_CLOCK                ; NONE         ; Untyped                                                                  ;
+; ROUND0_CLOCK                  ; none         ; Untyped                                                                  ;
+; ROUND1_CLOCK                  ; none         ; Untyped                                                                  ;
+; SATURATE_CLOCK                ; none         ; Untyped                                                                  ;
+; MULTABSATURATE_CLOCK          ; none         ; Untyped                                                                  ;
+; MULTCDSATURATE_CLOCK          ; none         ; Untyped                                                                  ;
+; ZEROACC_CLOCK                 ; NONE         ; Untyped                                                                  ;
+; SIGNA_CLOCK                   ; NONE         ; Untyped                                                                  ;
+; SIGNB_CLOCK                   ; NONE         ; Untyped                                                                  ;
+; OUTPUT_CLOCK                  ; NONE         ; Untyped                                                                  ;
+; ADDNSUB0_CLEAR                ; NONE         ; Untyped                                                                  ;
+; ADDNSUB1_CLEAR                ; NONE         ; Untyped                                                                  ;
+; ROUND0_CLEAR                  ; none         ; Untyped                                                                  ;
+; ROUND1_CLEAR                  ; none         ; Untyped                                                                  ;
+; SATURATE_CLEAR                ; none         ; Untyped                                                                  ;
+; MULTABSATURATE_CLEAR          ; none         ; Untyped                                                                  ;
+; MULTCDSATURATE_CLEAR          ; none         ; Untyped                                                                  ;
+; ZEROACC_CLEAR                 ; NONE         ; Untyped                                                                  ;
+; SIGNA_CLEAR                   ; NONE         ; Untyped                                                                  ;
+; SIGNB_CLEAR                   ; NONE         ; Untyped                                                                  ;
+; OUTPUT_CLEAR                  ; NONE         ; Untyped                                                                  ;
+; ADDNSUB0_PIPELINE_CLOCK       ; NONE         ; Untyped                                                                  ;
+; ADDNSUB1_PIPELINE_CLOCK       ; NONE         ; Untyped                                                                  ;
+; ROUND0_PIPELINE_CLOCK         ; none         ; Untyped                                                                  ;
+; ROUND1_PIPELINE_CLOCK         ; none         ; Untyped                                                                  ;
+; SATURATE_PIPELINE_CLOCK       ; none         ; Untyped                                                                  ;
+; MULTABSATURATE_PIPELINE_CLOCK ; none         ; Untyped                                                                  ;
+; MULTCDSATURATE_PIPELINE_CLOCK ; none         ; Untyped                                                                  ;
+; ZEROACC_PIPELINE_CLOCK        ; NONE         ; Untyped                                                                  ;
+; SIGNA_PIPELINE_CLOCK          ; NONE         ; Untyped                                                                  ;
+; SIGNB_PIPELINE_CLOCK          ; NONE         ; Untyped                                                                  ;
+; ADDNSUB0_PIPELINE_CLEAR       ; NONE         ; Untyped                                                                  ;
+; ADDNSUB1_PIPELINE_CLEAR       ; NONE         ; Untyped                                                                  ;
+; ROUND0_PIPELINE_CLEAR         ; none         ; Untyped                                                                  ;
+; ROUND1_PIPELINE_CLEAR         ; none         ; Untyped                                                                  ;
+; SATURATE_PIPELINE_CLEAR       ; none         ; Untyped                                                                  ;
+; MULTABSATURATE_PIPELINE_CLEAR ; none         ; Untyped                                                                  ;
+; MULTCDSATURATE_PIPELINE_CLEAR ; none         ; Untyped                                                                  ;
+; ZEROACC_PIPELINE_CLEAR        ; NONE         ; Untyped                                                                  ;
+; SIGNA_PIPELINE_CLEAR          ; NONE         ; Untyped                                                                  ;
+; SIGNB_PIPELINE_CLEAR          ; NONE         ; Untyped                                                                  ;
+; MODE0_CLOCK                   ; none         ; Untyped                                                                  ;
+; MODE1_CLOCK                   ; none         ; Untyped                                                                  ;
+; ZEROACC1_CLOCK                ; none         ; Untyped                                                                  ;
+; SATURATE1_CLOCK               ; none         ; Untyped                                                                  ;
+; OUTPUT1_CLOCK                 ; none         ; Untyped                                                                  ;
+; OUTPUT2_CLOCK                 ; none         ; Untyped                                                                  ;
+; OUTPUT3_CLOCK                 ; none         ; Untyped                                                                  ;
+; OUTPUT4_CLOCK                 ; none         ; Untyped                                                                  ;
+; OUTPUT5_CLOCK                 ; none         ; Untyped                                                                  ;
+; OUTPUT6_CLOCK                 ; none         ; Untyped                                                                  ;
+; OUTPUT7_CLOCK                 ; none         ; Untyped                                                                  ;
+; MODE0_CLEAR                   ; none         ; Untyped                                                                  ;
+; MODE1_CLEAR                   ; none         ; Untyped                                                                  ;
+; ZEROACC1_CLEAR                ; none         ; Untyped                                                                  ;
+; SATURATE1_CLEAR               ; none         ; Untyped                                                                  ;
+; OUTPUT1_CLEAR                 ; none         ; Untyped                                                                  ;
+; OUTPUT2_CLEAR                 ; none         ; Untyped                                                                  ;
+; OUTPUT3_CLEAR                 ; none         ; Untyped                                                                  ;
+; OUTPUT4_CLEAR                 ; none         ; Untyped                                                                  ;
+; OUTPUT5_CLEAR                 ; none         ; Untyped                                                                  ;
+; OUTPUT6_CLEAR                 ; none         ; Untyped                                                                  ;
+; OUTPUT7_CLEAR                 ; none         ; Untyped                                                                  ;
+; MODE0_PIPELINE_CLOCK          ; none         ; Untyped                                                                  ;
+; MODE1_PIPELINE_CLOCK          ; none         ; Untyped                                                                  ;
+; ZEROACC1_PIPELINE_CLOCK       ; none         ; Untyped                                                                  ;
+; SATURATE1_PIPELINE_CLOCK      ; none         ; Untyped                                                                  ;
+; MODE0_PIPELINE_CLEAR          ; none         ; Untyped                                                                  ;
+; MODE1_PIPELINE_CLEAR          ; none         ; Untyped                                                                  ;
+; ZEROACC1_PIPELINE_CLEAR       ; none         ; Untyped                                                                  ;
+; SATURATE1_PIPELINE_CLEAR      ; none         ; Untyped                                                                  ;
+; FIRST_ADDER0_CLOCK            ; NONE         ; Untyped                                                                  ;
+; FIRST_ADDER1_CLOCK            ; NONE         ; Untyped                                                                  ;
+; FIRST_ADDER0_CLEAR            ; NONE         ; Untyped                                                                  ;
+; FIRST_ADDER1_CLEAR            ; NONE         ; Untyped                                                                  ;
+; DATAA_FORCED_TO_ZERO          ; NO           ; Untyped                                                                  ;
+; DATAC_FORCED_TO_ZERO          ; NO           ; Untyped                                                                  ;
+; USING_ROUNDING                ; NO           ; Untyped                                                                  ;
+; USING_SATURATION              ; NO           ; Untyped                                                                  ;
+; USING_MULT_SATURATION         ; NO           ; Untyped                                                                  ;
+; USING_LOADABLE_ACCUM          ; NO           ; Untyped                                                                  ;
+; LOADABLE_ACCUM_SUPPORTED      ; NO           ; Untyped                                                                  ;
+; USING_CHAINOUT                ; NO           ; Untyped                                                                  ;
+; CHAININ_WIDTH                 ; 0            ; Untyped                                                                  ;
+; CHAINOUT_PIPELINE_CLOCK       ; none         ; Untyped                                                                  ;
+; CHAINOUT_PIPELINE_CLEAR       ; none         ; Untyped                                                                  ;
+; CBXI_PARAMETER                ; mac_out_kv82 ; Untyped                                                                  ;
++-------------------------------+--------------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                    ;
++---------------------------------------+---------------------------+
+; Name                                  ; Value                     ;
++---------------------------------------+---------------------------+
+; Number of entity instances            ; 1                         ;
+; Entity Instance                       ; tanh_Dp:Dp|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 16                        ;
+;     -- LPM_WIDTHB                     ; 16                        ;
+;     -- LPM_WIDTHP                     ; 32                        ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                  ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                        ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                        ;
+;     -- USE_EAB                        ; OFF                       ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                      ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                        ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                        ;
++---------------------------------------+---------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 36                          ;
+; cycloneiii_ff         ; 55                          ;
+;     CLR               ; 6                           ;
+;     ENA CLR           ; 47                          ;
+;     ENA CLR SCLR      ; 2                           ;
+; cycloneiii_lcell_comb ; 473                         ;
+;     arith             ; 169                         ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 7                           ;
+;         3 data inputs ; 157                         ;
+;     normal            ; 304                         ;
+;         0 data inputs ; 6                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 15                          ;
+;         3 data inputs ; 52                          ;
+;         4 data inputs ; 230                         ;
+;                       ;                             ;
+; Max LUT depth         ; 13.50                       ;
+; Average LUT depth     ; 10.42                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+    Info: Processing started: Sun Jun 28 15:40:01 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pptanh -c pptanh
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 3 design units, including 3 entities, in source file pptanh.v
+    Info (12023): Found entity 1: tanh_Dp File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/pptanh.v Line: 1
+    Info (12023): Found entity 2: tanh_Controller File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/pptanh.v Line: 60
+    Info (12023): Found entity 3: tanh File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/pptanh.v Line: 105
+Info (12127): Elaborating entity "tanh" for the top level hierarchy
+Info (12128): Elaborating entity "tanh_Dp" for hierarchy "tanh_Dp:Dp" File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/pptanh.v Line: 109
+Warning (10230): Verilog HDL assignment warning at pptanh.v(42): truncated value with size 32 to match size of target (3) File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/pptanh.v Line: 42
+Info (12128): Elaborating entity "tanh_Controller" for hierarchy "tanh_Controller:Cu" File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/pptanh.v Line: 111
+Info (10264): Verilog HDL Case Statement information at pptanh.v(90): all case item expressions in this case statement are onehot File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/pptanh.v Line: 90
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "tanh_Dp:Dp|Mult0" File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/pptanh.v Line: 13
+Info (12130): Elaborated megafunction instantiation "tanh_Dp:Dp|lpm_mult:Mult0" File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/pptanh.v Line: 13
+Info (12133): Instantiated megafunction "tanh_Dp:Dp|lpm_mult:Mult0" with the following parameter: File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/pptanh.v Line: 13
+    Info (12134): Parameter "LPM_WIDTHA" = "16"
+    Info (12134): Parameter "LPM_WIDTHB" = "16"
+    Info (12134): Parameter "LPM_WIDTHP" = "32"
+    Info (12134): Parameter "LPM_WIDTHR" = "32"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_1ht.tdf
+    Info (12023): Found entity 1: mult_1ht File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/db/mult_1ht.tdf Line: 28
+Info (270001): Converted 1 DSP block slices
+    Info (270002): Used 1 DSP blocks before DSP block balancing
+        Info (270003): Used 1 DSP block slices in "Simple Multiplier (18-bit)" mode implemented in approximately 1 DSP blocks
+    Info (270013): Converted the following 1 DSP block slices to logic elements
+        Info (270006): DSP block slice in "Simple Multiplier (18-bit)" mode with output node "tanh_Dp:Dp|lpm_mult:Mult0|mult_1ht:auto_generated|mac_out2" File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/db/mult_1ht.tdf Line: 44
+            Info (270004): DSP block output node "tanh_Dp:Dp|lpm_mult:Mult0|mult_1ht:auto_generated|mac_out2" File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/db/mult_1ht.tdf Line: 44
+            Info (270005): DSP block multiplier node "tanh_Dp:Dp|lpm_mult:Mult0|mult_1ht:auto_generated|mac_mult1" File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/db/mult_1ht.tdf Line: 35
+    Info (270002): Used 0 DSP blocks after DSP block balancing
+Info (12130): Elaborated megafunction instantiation "tanh_Dp:Dp|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1" File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/db/mult_1ht.tdf Line: 35
+Info (12133): Instantiated megafunction "tanh_Dp:Dp|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1" with the following parameter: File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/db/mult_1ht.tdf Line: 35
+    Info (12134): Parameter "MULT_REPRESENTATION_A" = "UNSIGNED"
+    Info (12134): Parameter "MULT_REPRESENTATION_B" = "UNSIGNED"
+    Info (12134): Parameter "MULT_PIPELINE" = "0"
+    Info (12134): Parameter "MULT_CLOCK" = "NONE"
+    Info (12134): Parameter "MULT_CLEAR" = "NONE"
+    Info (12134): Parameter "MULT_INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MULT_INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "dataa_width" = "16"
+    Info (12134): Parameter "datab_width" = "16"
+    Info (12134): Parameter "output_width" = "32"
+    Info (12134): Parameter "dataa_clock" = "NONE"
+    Info (12134): Parameter "datab_clock" = "NONE"
+    Info (12134): Parameter "signa_clock" = "NONE"
+    Info (12134): Parameter "signb_clock" = "NONE"
+    Info (12134): Parameter "output_clock" = "NONE"
+    Info (12134): Parameter "dataa_clear" = "NONE"
+    Info (12134): Parameter "datab_clear" = "NONE"
+    Info (12134): Parameter "signa_clear" = "NONE"
+    Info (12134): Parameter "signb_clear" = "NONE"
+    Info (12134): Parameter "output_clear" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mac_mult_r2h1.tdf
+    Info (12023): Found entity 1: mac_mult_r2h1 File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/db/mac_mult_r2h1.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_jul.tdf
+    Info (12023): Found entity 1: mult_jul File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/db/mult_jul.tdf Line: 28
+Info (12130): Elaborated megafunction instantiation "tanh_Dp:Dp|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2" File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/db/mult_1ht.tdf Line: 44
+Info (12133): Instantiated megafunction "tanh_Dp:Dp|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_out:mac_out2" with the following parameter: File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/db/mult_1ht.tdf Line: 44
+    Info (12134): Parameter "OPERATION_MODE" = "OUTPUT_ONLY"
+    Info (12134): Parameter "dataa_width" = "32"
+    Info (12134): Parameter "datab_width" = "0"
+    Info (12134): Parameter "datac_width" = "0"
+    Info (12134): Parameter "datad_width" = "0"
+    Info (12134): Parameter "output_width" = "32"
+    Info (12134): Parameter "signa_clock" = "NONE"
+    Info (12134): Parameter "signb_clock" = "NONE"
+    Info (12134): Parameter "addnsub0_clock" = "NONE"
+    Info (12134): Parameter "addnsub1_clock" = "NONE"
+    Info (12134): Parameter "zeroacc_clock" = "NONE"
+    Info (12134): Parameter "first_adder0_clock" = "NONE"
+    Info (12134): Parameter "first_adder1_clock" = "NONE"
+    Info (12134): Parameter "output_clock" = "NONE"
+    Info (12134): Parameter "signa_clear" = "NONE"
+    Info (12134): Parameter "signb_clear" = "NONE"
+    Info (12134): Parameter "addnsub0_clear" = "NONE"
+    Info (12134): Parameter "addnsub1_clear" = "NONE"
+    Info (12134): Parameter "zeroacc_clear" = "NONE"
+    Info (12134): Parameter "first_adder0_clear" = "NONE"
+    Info (12134): Parameter "first_adder1_clear" = "NONE"
+    Info (12134): Parameter "output_clear" = "NONE"
+    Info (12134): Parameter "signa_pipeline_clock" = "NONE"
+    Info (12134): Parameter "signb_pipeline_clock" = "NONE"
+    Info (12134): Parameter "addnsub0_pipeline_clock" = "NONE"
+    Info (12134): Parameter "addnsub1_pipeline_clock" = "NONE"
+    Info (12134): Parameter "zeroacc_pipeline_clock" = "NONE"
+    Info (12134): Parameter "signa_pipeline_clear" = "NONE"
+    Info (12134): Parameter "signb_pipeline_clear" = "NONE"
+    Info (12134): Parameter "addnsub0_pipeline_clear" = "NONE"
+    Info (12134): Parameter "addnsub1_pipeline_clear" = "NONE"
+    Info (12134): Parameter "zeroacc_pipeline_clear" = "NONE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mac_out_kv82.tdf
+    Info (12023): Found entity 1: mac_out_kv82 File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/db/mac_out_kv82.tdf Line: 22
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following LCELL buffer node(s):
+        Warning (14320): Synthesized away node "tanh_Dp:Dp|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[17]" File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "tanh_Dp:Dp|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le11a[16]" File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/db/mult_jul.tdf Line: 47
+        Warning (14320): Synthesized away node "tanh_Dp:Dp|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[16]" File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/db/mult_jul.tdf Line: 48
+        Warning (14320): Synthesized away node "tanh_Dp:Dp|lpm_mult:Mult0|mult_1ht:auto_generated|alt_mac_mult:mac_mult1|mac_mult_r2h1:auto_generated|mult_jul:mult1|le12a[15]" File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/db/mult_jul.tdf Line: 48
+Info (13014): Ignored 468 buffer(s)
+    Info (13016): Ignored 16 CARRY_SUM buffer(s)
+    Info (13019): Ignored 452 SOFT buffer(s)
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "rBus[14]" is stuck at GND File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/pptanh.v Line: 105
+    Warning (13410): Pin "rBus[15]" is stuck at GND File: C:/intelFPGA/18.1/test/simulation/modelsim/PrePost/pptanh.v Line: 105
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 5 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 525 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 19 input pins
+    Info (21059): Implemented 17 output pins
+    Info (21061): Implemented 489 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
+    Info: Peak virtual memory: 4836 megabytes
+    Info: Processing ended: Sun Jun 28 15:40:17 2020
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:32
+
+

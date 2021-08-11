@@ -1,0 +1,20 @@
+Fitter Status : Successful - Sun Jun 28 15:40:57 2020
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+Revision Name : pptanh
+Top-level Entity Name : tanh
+Family : Cyclone IV GX
+Device : EP4CGX15BF14C6
+Timing Models : Final
+Total logic elements : 471 / 14,400 ( 3 % )
+    Total combinational functions : 471 / 14,400 ( 3 % )
+    Dedicated logic registers : 55 / 14,400 ( < 1 % )
+Total registers : 55
+Total pins : 36 / 81 ( 44 % )
+Total virtual pins : 0
+Total memory bits : 0 / 552,960 ( 0 % )
+Embedded Multiplier 9-bit elements : 0
+Total GXB Receiver Channel PCS : 0 / 2 ( 0 % )
+Total GXB Receiver Channel PMA : 0 / 2 ( 0 % )
+Total GXB Transmitter Channel PCS : 0 / 2 ( 0 % )
+Total GXB Transmitter Channel PMA : 0 / 2 ( 0 % )
+Total PLLs : 0 / 3 ( 0 % )

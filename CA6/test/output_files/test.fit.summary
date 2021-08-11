@@ -1,0 +1,20 @@
+Fitter Status : Successful - Sun Jun 28 17:51:26 2020
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
+Revision Name : test
+Top-level Entity Name : test
+Family : Cyclone IV GX
+Device : EP4CGX15BF14A7
+Timing Models : Final
+Total logic elements : 456 / 14,400 ( 3 % )
+    Total combinational functions : 456 / 14,400 ( 3 % )
+    Dedicated logic registers : 57 / 14,400 ( < 1 % )
+Total registers : 57
+Total pins : 36 / 81 ( 44 % )
+Total virtual pins : 0
+Total memory bits : 112 / 552,960 ( < 1 % )
+Embedded Multiplier 9-bit elements : 0
+Total GXB Receiver Channel PCS : 0 / 2 ( 0 % )
+Total GXB Receiver Channel PMA : 0 / 2 ( 0 % )
+Total GXB Transmitter Channel PCS : 0 / 2 ( 0 % )
+Total GXB Transmitter Channel PMA : 0 / 2 ( 0 % )
+Total PLLs : 0 / 3 ( 0 % )

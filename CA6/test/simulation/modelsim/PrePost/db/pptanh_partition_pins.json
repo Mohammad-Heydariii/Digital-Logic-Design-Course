@@ -1,0 +1,145 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Ready",
+					"strict" : false
+				},
+				{
+					"name" : "rBus[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rBus[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rBus[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rBus[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rBus[4]",
+					"strict" : false
+				},
+				{
+					"name" : "rBus[5]",
+					"strict" : false
+				},
+				{
+					"name" : "rBus[6]",
+					"strict" : false
+				},
+				{
+					"name" : "rBus[7]",
+					"strict" : false
+				},
+				{
+					"name" : "rBus[8]",
+					"strict" : false
+				},
+				{
+					"name" : "rBus[9]",
+					"strict" : false
+				},
+				{
+					"name" : "rBus[10]",
+					"strict" : false
+				},
+				{
+					"name" : "rBus[11]",
+					"strict" : false
+				},
+				{
+					"name" : "rBus[12]",
+					"strict" : false
+				},
+				{
+					"name" : "rBus[13]",
+					"strict" : false
+				},
+				{
+					"name" : "Start",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "xBus[0]",
+					"strict" : false
+				},
+				{
+					"name" : "xBus[1]",
+					"strict" : false
+				},
+				{
+					"name" : "xBus[2]",
+					"strict" : false
+				},
+				{
+					"name" : "xBus[3]",
+					"strict" : false
+				},
+				{
+					"name" : "xBus[4]",
+					"strict" : false
+				},
+				{
+					"name" : "xBus[5]",
+					"strict" : false
+				},
+				{
+					"name" : "xBus[6]",
+					"strict" : false
+				},
+				{
+					"name" : "xBus[7]",
+					"strict" : false
+				},
+				{
+					"name" : "xBus[8]",
+					"strict" : false
+				},
+				{
+					"name" : "xBus[9]",
+					"strict" : false
+				},
+				{
+					"name" : "xBus[10]",
+					"strict" : false
+				},
+				{
+					"name" : "xBus[11]",
+					"strict" : false
+				},
+				{
+					"name" : "xBus[12]",
+					"strict" : false
+				},
+				{
+					"name" : "xBus[13]",
+					"strict" : false
+				},
+				{
+					"name" : "xBus[14]",
+					"strict" : false
+				},
+				{
+					"name" : "xBus[15]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
